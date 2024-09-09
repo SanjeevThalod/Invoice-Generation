@@ -13,6 +13,7 @@ export default function StateContext({ children }) {
   const [website, setWebsite] = useState("");
   const [clientName, setClientName] = useState("");
   const [clientAddress, setClientAddress] = useState("");
+  const [cState,setCState] = useState("");
   const [pan,setPan] = useState("");
   const [gst,setGst] = useState("");
   const [invoiceNumber, setInvoiceNumber] = useState("");
@@ -44,7 +45,9 @@ export default function StateContext({ children }) {
     if (!description || !quantity || !price) {
       alert("Empty States");
     } else {
-      setTaxType((clientAddress === sState && (clientAddress !== "")) ? "IGST" : ["CGST","SGST"]);
+      console.log(cState + " " + sState);
+      setTaxType((cState === sState && (cState !== "")) ? "IGST" : ["CGST","SGST"]);
+      console.log(taxType);
       const newItems = {
         id:uuidv4(),
         description,
@@ -167,6 +170,8 @@ export default function StateContext({ children }) {
     bPin,
     setBPin,
     taxType,
+    cState,
+    setCState
   };
 
   return <State.Provider value={context}>{children}</State.Provider>;

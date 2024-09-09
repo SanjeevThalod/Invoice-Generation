@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { State } from "./Context/stateContext";
 
 export default function Dates() {
-  const { invoiceNumber, invoiceDate, dueDate, sadd1, sState, sPin, bAdd1, bState, bPin, clientAddress } = useContext(State);
+  const { invoiceNumber, invoiceDate, dueDate, sadd1, sState, sPin, bAdd1, bState, bPin, cState } = useContext(State);
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Dates() {
           </li>
           <li className="p-1">
             <span className="font-bold">Place of Supply:</span>
-            <a>{clientAddress}</a>
+            <a>{cState}</a>
           </li>
         </ul>
       </article>

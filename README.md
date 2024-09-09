@@ -34,6 +34,15 @@ This project is an **Invoice Generator** built with React and Vite. It allows yo
 - **Empty Invoice**:
   ![Empty Invoice Input](https://res.cloudinary.com/dxt2i61hy/image/upload/v1725893970/Screenshot_2024-09-09_201101_gvqscr.png)
 
+
+### Note (Tax Calculation Logic):
+When the client and shipping address is different both CGST and SGST are calculated at each 9%,
+![Note Input](https://res.cloudinary.com/dxt2i61hy/image/upload/v1725900018/Screenshot_2024-09-09_204938_dhaxlz.png)
+
+When client and shipping adress are same then single IGST is calculated at 18%;
+![Input](https://res.cloudinary.com/dxt2i61hy/image/upload/v1725899893/Screenshot_2024-09-09_220632_dgq7ga.png)
+
+
 ## Technologies Used
 
 - **React**: For building the user interface.
@@ -62,3 +71,6 @@ To get a local copy up and running, follow these steps:
 4. **Running the project:**
     ```bash
     npm run dev
+5. **The project uses PORT:5173 by default**
+    ```bash
+    localhost:5173

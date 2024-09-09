@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { State } from "./Context/stateContext";
 
 export default function Table() {
-  const { list, total } = useContext(State);
+  const { list, total, taxType } = useContext(State);
 
   function numberToWords(num) {
     if (num === 0) return "Zero";
@@ -55,7 +55,7 @@ export default function Table() {
             <td className="font-bold">Amount</td>
           </tr>
         </thead>
-        {list.map(({ id, description, quantity, price, amount, discount, taxType }) => (
+        {list.map(({ id, description, quantity, price, amount, discount }) => (
           <React.Fragment key={id}>
             <tbody>
               <tr className="h-10">

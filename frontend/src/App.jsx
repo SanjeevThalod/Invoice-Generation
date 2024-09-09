@@ -86,6 +86,8 @@ function App() {
     setBState,
     bPin,
     setBPin,
+    cState,
+    setCState
   } = useContext(State);
   const [isSameAsShipping, setIsSameAsShipping] = useState(false);
 
@@ -381,11 +383,10 @@ function App() {
                   <select
                     id="clientAddress"
                     name="clientAddress"
-                    value={clientAddress}
-                    onChange={(e) => setClientAddress(e.target.value)}
+                    value={cState} onChange={(e)=>setCState(e.target.value)} 
                     className="mt-2 p-2 border border-gray-300 rounded"
                   >
-                    <option value="" disabled>
+                    <option disabled>
                       Select your client's state
                     </option>
                     {states.map((state, index) => (
@@ -399,7 +400,7 @@ function App() {
                 <div className="flex flex-col">
                   <label htmlFor="clientAddress">Enter your client's PAN</label>
                   <input
-                    type="number"
+                    type="text"
                     name="PAN"
                     id="PAN"
                     placeholder="Enter your client's PAN"
@@ -413,7 +414,7 @@ function App() {
                 <div className="flex flex-col">
                   <label htmlFor="clientAddress">Enter your client's GST</label>
                   <input
-                    type="number"
+                    type="text"
                     name="gst"
                     id="gst"
                     placeholder="Enter your client's GST"
